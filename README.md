@@ -1,20 +1,33 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
-
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
-
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
-
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+Pipeline-7: Deploying a asp.net application with SonarQube to azure app service using Azure DevOps
+Steps:
+Navigate to Azure DevOps and create a new project named pipeline-7
+Navigate to repos
+Click on Import and import this repo https://github.com/luckysuie/web-asp-dontnet
+Open sonarcloud.io and login into your account using GitHub
+Create a organization and create a project named dotnetanalysis in that organization
+Navigate to my account--> security-->Generate Token Note down the below
+project name
+project key
+Token
+Navigate to Azure DevOps and move project settings and create a service connection for sonar cloud
+search SonarQube and provide the necessary details
+you should see you connection successful
+Navigate to portal and create azure app service
+select webapp
+Enter the name
+Runtime Stack: .NET 8(LTS)
+Operating system : windows
+Region: Canada central
+Navigate to pipelines and start writing the pipeline for
+CI Continuous Integration
+Install NuGet
+Restore packages
+Prepare SonarCloud
+Build the project
+Run SonarCloud Analysis
+Publish SonarCloud Results
+Publish Web App
+Publish Build Artifact
+CD Continuous Deployment
+Download the artifact
+Deploy to Azure app service
